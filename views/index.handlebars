@@ -1,0 +1,53 @@
+      <h1>Eat-Da-Burger!</h1>
+
+
+{{#each burger}}
+    {{#unless this.devour}}
+
+    <div>
+
+    <p> {{this.id}} {{this.burger_name}}</p>
+    
+
+    <form action="/burger/{{this.id}}/update?_method=PUT" method="POST">
+    <button type="submit">Devour!!</button>
+    </form>
+
+    </div>
+      
+    {{/unless}}
+{{/each}}
+
+
+
+
+{{#each burger}}
+    {{#if this.devour}}
+
+    <div>
+
+    <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
+
+    
+    </div>
+      
+    {{/if}}
+{{/each}}
+
+
+
+<form class="create-update-form" action="/burger/create" method="POST">
+
+  
+
+      <input type="text" id="ca" name="name"/>
+
+      <button type="submit">Submit</button>
+
+</form>
+
+   <h4>Enter a burg
+      er you want to it Click the "Submit" button</h4>
+
+
+
