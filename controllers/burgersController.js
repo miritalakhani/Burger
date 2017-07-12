@@ -40,8 +40,8 @@ router.put("/burger/:id/update", function(req, res) {
   console.log("route---- /burger/:id/update")
    console.log(req.body);
    console.log(req.params);
-   var burgerId = req.params.id
-  burger.updateBurger([ burgerId ] , function() {
+   var burgerId = "id = " + req.params.id;
+   burger.updateBurger( {devoured : 1}, burgerId,function() {
     res.redirect("/");
   });
 
